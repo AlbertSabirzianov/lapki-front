@@ -1,10 +1,10 @@
 import './App.css';
+import JewelryList from './components/jewelrysmal';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Helloy</h1>
-    </div>
+   <JewelryList/>
   );
 }
 
