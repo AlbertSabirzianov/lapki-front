@@ -16,19 +16,20 @@ export default function OneJewelry({ id }) {
 
     useEffect(() => {
         axios.get(getPictureUrl(id)).then(response =>
-            setPictures(response.data)
+            {setPictures(response.data);
+            console.log(response.data)}
         );
         axios.get(getJewelryUrl(id)).then(response => {
             setJewerly(response.data)
         })
-    })
+    }, [])
 
     
     return (
         <>
-        <div className="card">
+        <div className="card" id='one'>
             {pictures.map(picture =>
-                <img src={picture.url} className="card-img-top"></img>
+                <img src={picture.picture} className="card-img-top" key={picture.pk} alt="ну вот так("></img>
             )}
             <div className="card-body">
                 <h5 className="card-title">{jewelry.name}</h5>

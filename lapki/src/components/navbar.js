@@ -1,5 +1,7 @@
 
 import { useState } from 'react';
+import svg from './mono-kugar.svg';
+
 
 export default function NavBar({ changeSearch, changeFilter, clickMany}) {
     const [text, setText] = useState('');
@@ -10,7 +12,8 @@ export default function NavBar({ changeSearch, changeFilter, clickMany}) {
         <>
         <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
-            
+
+            <img src={svg} href='./mono-kugar.svg' alt='No' className='cat'></img>           
             <a href='/' className="navbar-brand">Lapki</a>
 
             <ul className='navbar-nav'>

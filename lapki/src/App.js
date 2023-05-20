@@ -22,29 +22,28 @@ function App() {
     }, []);
   
   function changeSearch(search) { // Меняет запрашиваемые украшения
-    setSearchText(text => search);
-    
-    stateIsOne(false);
-    axios.get(jewelryUrl + '?search=' + searchText).then(response => 
-      setData(response.data.results)
+    setSearchText(searchText => search);
+    stateIsOne(bo => false);
+    let url = new URL(jewelryUrl + '?search=' + searchText);
+    axios.get(url).then(response => 
+      setData(d => response.data.results)
         );
-    console.log(searchText);
   }
 
   function changeFilter(category) { // Меняет категорию украшений
     stateIsOne(false);
     axios.get(jewelryUrl + '?category=' + category).then(response => 
-      setData(response.data.results)
+      setData(d => response.data.results)
         );
   }
   
   function clickOne(number) { // Откравает одно украшение
-    setId(number => number);
+    setId(id => number);
     stateIsOne(b => true);
   }
 
   function clickMany(text) { // Переключает на все украшения
-    setSearchText(t => text);
+    setSearchText(searchText => text);
     stateIsOne(b => false);
   }
 
