@@ -14,27 +14,26 @@ function App() {
   const [d, setData] = useState([]);
   const [id, setId] = useState(0);
   const [searchText, setSearchText] = useState('');
+  const filterData = d.filter(jewelry => {
+    return jewelry.name.toLowerCase().includes(searchText.toLowerCase()) || jewelry.description.toLowerCase().includes(searchText.toLowerCase())
+  })
 
   useEffect(() => {
       axios.get(jewelryUrl).then(response => 
-      setData(response.data.results)
+      setData(response.data)
         )
     }, []);
   
-  function changeSearch(search) { // Меняет запрашиваемые украшения
-    setSearchText(searchText => search);
-    stateIsOne(bo => false);
-    let url = new URL(jewelryUrl + '?search=' + searchText);
-    axios.get(url).then(response => 
-      setData(d => response.data.results)
-        );
+  function changeFilter(category) { // Меняет категорию украшений
+    axios.get(jewelryUrl + '?category=' + category).then(response => 
+      setData(response.data)
+        )
   }
 
-  function changeFilter(category) { // Меняет категорию украшений
-    stateIsOne(false);
-    axios.get(jewelryUrl + '?category=' + category).then(response => 
-      setData(d => response.data.results)
-        );
+  function stopFilter() { // Отменяет фильтрацию по категориям
+    axios.get(jewelryUrl).then(response => 
+      setData(response.data)
+        )
   }
   
   function clickOne(number) { // Откравает одно украшение
@@ -42,15 +41,14 @@ function App() {
     stateIsOne(b => true);
   }
 
-  function clickMany(text) { // Переключает на все украшения
-    setSearchText(searchText => text);
+  function clickMany() { // Переключает на все украшения
     stateIsOne(b => false);
   }
 
   return (
     <>
-    <NavBar changeSearch={changeSearch} changeFilter={changeFilter} clickMany={clickMany}/>
-    { isOne ? <OneJewelry id={id}/> : <JewelryList d={d} clickOne={clickOne}/> }
+    <NavBar setSearchText={setSearchText}  changeFilter={changeFilter} clickMany={clickMany} stopFilter={stopFilter}/>
+    { isOne ? <OneJewelry id={id}/> : <JewelryList d={filterData} clickOne={clickOne}/> }
    </>
   );
 }

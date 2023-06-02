@@ -22,7 +22,7 @@ export default function OneJewelry({ id }) {
         axios.get(getJewelryUrl(id)).then(response => {
             setJewerly(response.data)
         })
-    }, [])
+    }, )
 
     
     return (

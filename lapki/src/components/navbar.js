@@ -1,12 +1,7 @@
-
-import { useState } from 'react';
 import svg from './mono-kugar.svg';
 
 
-export default function NavBar({ changeSearch, changeFilter, clickMany}) {
-    const [text, setText] = useState('');
-
-
+export default function NavBar({ setSearchText, changeFilter, clickMany, stopFilter}) {
 
     return(
         <>
@@ -22,7 +17,7 @@ export default function NavBar({ changeSearch, changeFilter, clickMany}) {
                         Сортировать
                     </a>
                     <ul className="dropdown-menu">
-                        <li><button className="dropdown-item" onClick={() => changeSearch(text)}>  украшения</button></li>
+                        <li><button className="dropdown-item" onClick={() => stopFilter()}>  украшения</button></li>
                         <li><button className="dropdown-item" onClick={() => changeFilter(1)}>Кольца</button></li>
                         <li><button className="dropdown-item" onClick={() => changeFilter(2)}>Одерелья</button></li>
                         <li><button className="dropdown-item" onClick={() => changeFilter(3)}>Серьги</button></li>
@@ -39,16 +34,12 @@ export default function NavBar({ changeSearch, changeFilter, clickMany}) {
                 type="search"
                 placeholder="Search" 
                 aria-label="Search"
-                onChange={(e) => {
-                    changeSearch(e.target.value);
-                    setText(text => e.target.value);
-                    console.log(e.target.value);
-                }
-                }></input>
+                onChange={(e) => setSearchText(e.target.value)}>
+             </input>
             <button 
                 className="btn btn-outline-success" 
                 type="submit"
-                onClick={() => clickMany(text)}>Search</button>
+                onClick={() => clickMany()}>Search</button>
             </form>
         </div>
         </nav>
