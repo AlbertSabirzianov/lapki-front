@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Order from "./order";
 
 
 function getPictureUrl(id) {
@@ -16,13 +17,12 @@ export default function OneJewelry({ id }) {
 
     useEffect(() => {
         axios.get(getPictureUrl(id)).then(response =>
-            {setPictures(response.data);
-            console.log(response.data)}
+            {setPictures(response.data)}
         );
         axios.get(getJewelryUrl(id)).then(response => {
             setJewerly(response.data)
         })
-    }, )
+    }, [])
 
     
     return (
@@ -41,6 +41,7 @@ export default function OneJewelry({ id }) {
                 </ul>
             </div>
         </div>
+        <Order id={jewelry.id} jewelryName={jewelry.name}></Order>
         </>
     )
 }
