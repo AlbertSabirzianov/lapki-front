@@ -1,0 +1,23 @@
+.navbar-brand {
+    display: inline-block;
+}
+
+.d-flex {
+    position: relative;
+    left: 60%;
+}
+
+.cat {
+    position: relative;
+    left: 35%;
+    transition: 1s;
+}
+
+.cat:hover {
+    transform: scale(1.1);
+}
+
+.dropdown-menu li {
+    padding-left: 20px;
+}
+

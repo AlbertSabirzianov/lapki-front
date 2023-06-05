@@ -1,13 +1,14 @@
 import axios from 'axios';
 import './App.css';
+import './styles/navbar.css';
 
 import JewelryList from './components/jewelrysmal';
 import NavBar from './components/navbar';
 import { useEffect, useState } from 'react';
 import OneJewelry from './components/jewelryone';
+import { baseUrl } from './components/utils';
 
-
-const jewelryUrl = 'http://127.0.0.1:8000/jewelry';
+const jewelryUrl = baseUrl + 'jewelry';
 
 function App() {
   const [isOne, stateIsOne] = useState(false);
@@ -26,14 +27,16 @@ function App() {
   
   function changeFilter(category) { // Меняет категорию украшений
     axios.get(jewelryUrl + '?category=' + category).then(response => 
-      setData(response.data)
-        )
+      setData(d => response.data)
+        );
+    stateIsOne(isOne => false);
   }
 
   function stopFilter() { // Отменяет фильтрацию по категориям
     axios.get(jewelryUrl).then(response => 
-      setData(response.data)
-        )
+      setData(d => response.data)
+        );
+    stateIsOne(isOne => false);
   }
   
   function clickOne(number) { // Откравает одно украшение

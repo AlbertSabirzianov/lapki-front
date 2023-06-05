@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Order from "./order";
+import { baseUrl } from "./utils";
 
 
 function getPictureUrl(id) {
-    return 'http://127.0.0.1:8000/jewelry/' + id + '/picture'
+    return baseUrl + 'jewelry/' + id + '/picture'
 }
 
 function getJewelryUrl(id) {
-    return 'http://127.0.0.1:8000/jewelry/' + id
+    return baseUrl + 'jewelry/' + id
 }
 
 export default function OneJewelry({ id }) {
@@ -41,7 +42,7 @@ export default function OneJewelry({ id }) {
                 </ul>
             </div>
         </div>
-        <Order id={jewelry.id} jewelryName={jewelry.name}></Order>
+        <Order id={id} jewelryName={jewelry.name}></Order>
         </>
     )
 }
