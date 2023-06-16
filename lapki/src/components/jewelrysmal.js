@@ -7,8 +7,8 @@ function JewelryList({ d, clickOne }) {
                 <img className="card-img-top" alt="somthind wrong" src={jewelry.icon}/>
                 <div className="card-body">
                     <h5 className="card-title">{jewelry.name}</h5>
-                    <p className="card-text">{jewelry.description}</p>
-                    <h3>Категория: {jewelry.cat}</h3>
+                    <p className="card-text">{jewelry.second_name}</p>
+                    
                 </div>
                 </div>
                     )
