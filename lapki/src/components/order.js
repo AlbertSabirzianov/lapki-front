@@ -61,7 +61,7 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
         <>
         <div className='order_div'>
         <form onSubmit={handleSubmit(sendOrder)} id='order_form'>
-            <div style={{'overflowY': "auto"}}>
+            <div>
             {bascetJewelrys.map(jewelry =>
                 <MiniJewelry key={jewelry.pk} jewelry={jewelry} deleteJewelry={deletejewelry}></MiniJewelry>
                 )}

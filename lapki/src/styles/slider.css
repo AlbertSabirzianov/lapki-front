@@ -12,18 +12,25 @@
     position: absolute;
     margin-top: 52px;
     left: 100px;
+    width: 400px;
     
 }
 
 #order_form {
     position: fixed;
-    left: 70%;
+    left: 76%;
     top: 30%;
     background-color: cadetblue;
     padding: 30px;
     border-radius: 5%;
     z-index: 100;
     display: block;
+    overflow-y: auto;
+    max-width: 350px;
+    max-height: 500px;
+    /* 
+    Дописать max-hight и max-width для десктопа
+    */
 }
 
 #mark {

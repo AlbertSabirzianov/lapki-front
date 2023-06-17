@@ -2,6 +2,7 @@ import axios from 'axios';
 import './App.css';
 import './styles/navbar.css';
 import './styles/slider.css';
+import './styles/mobile.css';
 
 import JewelryList from './components/jewelrysmal';
 import NavBar from './components/navbar';

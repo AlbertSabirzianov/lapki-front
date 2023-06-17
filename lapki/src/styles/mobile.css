@@ -1,0 +1,41 @@
+@media screen and (max-width: 375px) {
+    .d-flex {
+        position: relative;
+        top: 15%;
+    }
+    
+    #content-jewelry-list {
+        margin-top: 50px;
+    }
+
+    #dropdown-nav {
+        position: relative;
+        z-index: 1000;
+    }
+
+    #basket_button {
+        left: 3px;
+    }
+
+    #order_form {
+        left: 15px;
+        max-width: 100%;
+        top: 125px;
+        margin-right: 15px;
+        max-height: 50%;
+        overflow-y: auto;
+    }
+
+    #carouselExampleIndicators {
+        max-width: 80%;
+        left: 2px;
+        margin-left: 20px;
+    }
+
+    .descriptionCard {
+        top: 80%;
+        width: auto;
+        margin-left: 75px;
+        
+    }
+}

@@ -1,7 +1,7 @@
 export default function Slider({ pictures }){
 
     return (
-        <div id="carouselExampleIndicators" className="carousel slide" style={{'width': '400px'}}>
+        <div id="carouselExampleIndicators" className="carousel slide">
   <div className="carousel-indicators">
     {pictures.map((picture, index) => {
         let slide = 'Slide ' + (index + 1).toString();

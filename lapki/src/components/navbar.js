@@ -7,13 +7,13 @@ export default function NavBar({ setSearchText, changeFilter, clickMany, stopFil
         <nav id='navbar' className="navbar navbar-expand-lg bg-body-tertiary" >
         
             <ul className='navbar-nav'>
-               <li class="nav-item dropdown">
+               <li className="nav-item dropdown">
                     <a href='/' className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list-nested" viewBox="0 0 16 16" id='cat_list'>
                     <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
                     </svg>
                     </a>
-                    <ul className="dropdown-menu" style={{'width': "500px",}}>
+                    <ul className="dropdown-menu" id='dropdown-nav'>
                         <li><button className="dropdown-item" onClick={() => stopFilter()}> Все украшения</button></li>
                         <li><button className="dropdown-item" onClick={() => changeFilter(1)}>Кольца</button></li>
                         <li><button className="dropdown-item" onClick={() => changeFilter(2)}>Ожерелья</button></li>
