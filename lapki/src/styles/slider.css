@@ -41,10 +41,14 @@
 .descriptionCard {
     display: block;
     position: absolute;
-    top: 50%;
-    right: 20%;
+    top: 30%;
+    right: 30%;
     width: 30%;
     margin-top: 20px;
+}
+
+#description_text {
+    white-space: pre-wrap;
 }
 
 .carousel-inner img {

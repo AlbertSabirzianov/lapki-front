@@ -33,7 +33,20 @@
     }
 
     .descriptionCard {
-        top: 80%;
+        top: 70%;
+        width: auto;
+        margin-left: 75px;
+        
+    }
+
+    #content-jewelry-list {
+        padding-left: 5%;
+      }
+}
+
+@media screen and (width > 319px) and (width < 321px) {
+    .descriptionCard {
+        top: 10%;
         width: auto;
         margin-left: 75px;
         
@@ -75,16 +88,20 @@
     }
 
     .descriptionCard {
-        top: 70%;
+        top: 60%;
         width: auto;
         margin-left: 75px;
         
     }
+
+    #content-jewelry-list {
+        padding-left: 8%;
+      }
 }
 
 @media screen and (max-width: 820px) and (width > 414px) {
     .descriptionCard {
-        top: 60%;
+        top: 50%;
         left: 20%;
     }
 
@@ -96,13 +113,14 @@
 
 @media screen and (width > 767px) and (width < 769px) {
     .descriptionCard {
-        top: 70%;
+        top: 60%;
         left: 20%;
     }
 }
 
 @media screen and (width > 911px) and (width < 913px) {
     .descriptionCard {
+        top: 50%;
         left: 20%;
     }
 
@@ -148,27 +166,29 @@
     }
 
     .descriptionCard {
-        top: 100%;
+        top: 80%;
         width: auto;
         margin-left: 75px;
         
     }
 }
 
-@media screen and (max-width: 280px) {
-    .cat {
-        left: 20px;
-        bottom: 50px;
-    }
-
-    .card {
-        width: 80%;
+@media screen and (width > 359px) and (width < 361px) {
+    .descriptionCard {
+        top: 60%;
+        width: auto;
+        margin-left: 75px;
+        
     }
 
     
 }
 
 @media screen and (width > 1023px) and (width < 1025px) {
+
+    .descriptionCard {
+        left: 55%;
+    }
     
     #order_form {
         width: 500px;
@@ -187,7 +207,7 @@
 
 @media screen and (width > 413px) and (width < 415px) and (height > 735px) and (height < 737px) {
     .descriptionCard {
-        top: 80%;
+        top: 70%;
 
     }
 }
@@ -195,6 +215,7 @@
 
 @media screen and (width > 1023px) and (width < 1025px) and (height > 1365px) and (height < 1367px) {
     .descriptionCard {
-        left: 10%;
+        top: 15%;
+
     }
 }

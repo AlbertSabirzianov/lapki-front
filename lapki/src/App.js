@@ -28,23 +28,10 @@ function App() {
   const [isIn, stateIsIn] = useState(false);
 
  
-
-  function isInBasket() {
-   
-      for (let i = 0; i < bascetJewelrys.length; i++) {
-        if (bascetJewelrys[i].pk === id) {
-          return true
-        }
-      }
-      return false
-  }
-
-
-
   useEffect(() => {
-    stateIsIn(isOne => isInBasket());
+    stateIsIn(isOne => idList.includes(id));
 
-  }, [summ])
+  }, [id, idList, summ])
 
   useEffect(() => {
       axios.get(jewelryUrl).then(response => 
