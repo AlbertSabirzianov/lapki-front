@@ -3,6 +3,7 @@ import axios from 'axios';
 import { baseUrl } from './utils';
 import MiniJewelry from './miniJewelry';
 import { useState } from 'react';
+import swal from 'sweetalert';
 
 
 const orderUrl = baseUrl + 'order/';
@@ -34,7 +35,7 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
     function sendOrder(data) {
         
         if (summ === 0) {
-            alert('Вы ничего не добавили в корзину((');
+            swal("Внимание!", "Корзина пуста(", "warning");
         } else {
             stateLoading(loading => true);
       axios.post(orderUrl, { // добавить в модель order поле summ
@@ -47,10 +48,10 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
       }).then((response) => {
         stateLoading(loading => false);
         if (response.status === 201) {
-            alert('Спасибо за заказ ' + data.name + ', мастер свяжется с вами)');
+            swal("Спасибо за заказ!", "Мастер свяжется с вами в ближайшее время", "success");
             reset();
         } else {
-            alert("Что то пошло не так...");
+            swal("Ошибка!", "Проблемы с интернет соединением...", "error");
         }
       });
     }
