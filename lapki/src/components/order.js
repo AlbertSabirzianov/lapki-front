@@ -2,12 +2,14 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { baseUrl } from './utils';
 import MiniJewelry from './miniJewelry';
+import { useState } from 'react';
 
 
 const orderUrl = baseUrl + 'order/';
 
 
 export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, summ, stateIdList, idList}) {
+    const [loading, stateLoading] = useState(false);
     
     const {
         register,
@@ -15,6 +17,10 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
         handleSubmit,
         reset,
     } = useForm({mode: 'onBlur'});
+
+    const spinner = <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>;
 
     
 
@@ -26,10 +32,11 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
     
 
     function sendOrder(data) {
-        console.log(idList);
+        
         if (summ === 0) {
             alert('Вы ничего не добавили в корзину((');
         } else {
+            stateLoading(loading => true);
       axios.post(orderUrl, { // добавить в модель order поле summ
         "summ": summ,
         "name": data.name,
@@ -38,6 +45,7 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
         "mail": data.mail,
         "phone_number": data.phone,
       }).then((response) => {
+        stateLoading(loading => false);
         if (response.status === 201) {
             alert('Спасибо за заказ ' + data.name + ', мастер свяжется с вами)');
             reset();
@@ -105,9 +113,10 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
             })}
             type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="telephone"></input>
         </div>
+        {loading ? spinner :
         <button type="submit" class="btn btn-secondary">
            Заказать!
-        </button>
+        </button>}
         </form>
         </div>
         </>
