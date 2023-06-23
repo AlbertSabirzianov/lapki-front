@@ -24,11 +24,11 @@ function Description({ jewelry, bascetJewelrys, stateBascetJewelrys, stateSumm, 
 
     return(
    <div className="descriptionCard">
-      <h5 className="card-title">{jewelry.name}</h5>
+      <h2 className="card-title"><b>{jewelry.name}</b></h2>
       
       <p className="card-text" id="second_name">{jewelry.second_name}</p>
-      <h6 className="card-title">{jewelry.price} ₽</h6><br></br>
-      <h6 className="card-subtitle mb-2 text-body-secondary">Примечание:</h6>
+      <h6 className="card-title"><b>{jewelry.price}</b> ₽</h6><br></br>
+      <h4 className="card-subtitle mb-2 text-body-secondary">Примечание:</h4>
       <p className="card-text" id="description_text">{jewelry.description}</p>
       {isIn ? 
                         <button type="button" id="plus_button" className="btn btn-outline-dark" onClick={() => minus()}>

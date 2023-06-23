@@ -5,6 +5,7 @@
   margin: 25px;
   float: left;
   line-height: 55px;
+  font-family: 'Poiret One', cursive;
 }
 
 .card:hover {

@@ -1,7 +1,9 @@
 @media screen and (max-width: 375px) {
     .d-flex {
-        position: relative;
-        top: 15%;
+        position: absolute;
+        top: 90px;
+        left: 10px;
+        padding-right: 5px;
     }
     
     #content-jewelry-list {
@@ -11,6 +13,10 @@
     #dropdown-nav {
         position: relative;
         z-index: 1000;
+    }
+    .dropdown-menu {
+        width: auto;
+    
     }
 
     #basket_button {
@@ -51,12 +57,22 @@
         margin-left: 75px;
         
     }
+    .dropdown-menu {
+        width: auto;
+    
+    }
 }
 
 @media screen and (max-width: 414px) and (width > 375px) {
     .d-flex {
-        position: relative;
-        top: 15%;
+        position: absolute;
+        top: 90px;
+        left: 10px;
+        padding-right: 5px;
+    }
+    .dropdown-menu {
+        width: auto;
+    
     }
     
     #content-jewelry-list {
@@ -109,6 +125,11 @@
        width: 500px;
        left: 55%;
     }
+    #dropdown-nav {
+        position: relative;
+        z-index: 1000;
+    }
+    
 }
 
 @media screen and (width > 767px) and (width < 769px) {
@@ -128,13 +149,20 @@
         width: 500px;
         left: 55%;
      }
+
+     #dropdown-nav {
+        position: relative;
+        z-index: 1000;
+     }
 }
 
 
 @media screen and (width > 539px) and (width < 541px) {
     .d-flex {
-        position: relative;
-        top: 15%;
+        position: absolute;
+        top: 90px;
+        left: 10px;
+        padding-right: 5px;
     }
     
     #content-jewelry-list {

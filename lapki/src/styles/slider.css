@@ -28,6 +28,8 @@
     overflow-y: auto;
     max-width: 350px;
     max-height: 500px;
+    font-family: 'Poiret One', cursive;
+    
     /* 
     Дописать max-hight и max-width для десктопа
     */
@@ -45,10 +47,14 @@
     right: 30%;
     width: 30%;
     margin-top: 20px;
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    
 }
 
 #description_text {
     white-space: pre-wrap;
+    
 }
 
 .carousel-inner img {
