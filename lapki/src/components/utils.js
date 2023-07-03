@@ -1,3 +1,3 @@
-const baseUrl = 'http://albertjt.beget.tech/';
+const baseUrl = 'https://lapkiback.ru/';
 
 export {baseUrl};
