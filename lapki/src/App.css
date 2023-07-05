@@ -66,6 +66,7 @@
 #plus_button {
   border-radius: 100%;
   position: relative;
+  margin-bottom: 60px;
 }
 
 #plus_button svg {

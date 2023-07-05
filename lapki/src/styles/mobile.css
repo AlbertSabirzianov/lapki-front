@@ -39,7 +39,7 @@
     }
 
     .descriptionCard {
-        top: 80%;
+        top: 90%;
         width: auto;
         margin-left: 75px;
         
@@ -104,7 +104,7 @@
     }
 
     .descriptionCard {
-        top: 75%;
+        top: 80%;
         width: auto;
         margin-left: 75px;
         
@@ -208,13 +208,17 @@
     }
     
     .descriptionCard {
-        top: 70%;
+        top: 80%;
         left: 20%;
     }
 
     #order_form {
-       width: 500px;
-       left: 55%;
+        left: 15px;
+        width: 100%;
+        top: 125px;
+        margin-right: 15px;
+        max-height: 50%;
+        overflow-y: auto;
     }
     #dropdown-nav {
         position: relative;
@@ -225,7 +229,7 @@
 
 @media screen and (width > 767px) and (width < 769px) {
     .descriptionCard {
-        top: 60%;
+        top: 80%;
         left: 20%;
     }
 }
@@ -294,7 +298,7 @@
 
 @media screen and (width > 359px) and (width < 361px) {
     .descriptionCard {
-        top: 60%;
+        top: 80%;
         width: auto;
         margin-left: 75px;
         
@@ -339,4 +343,57 @@
         top: 60%;
         left: 20%;
     }
+
+    #order_form {
+        width: 500px;
+        left: 55%;
+     }
+}
+
+@media screen and (width > 1079px) and (width < 1081px) {
+    .descriptionCard {
+        left: 55%;
+        top: 20%;
+    }
+    
+    #order_form {
+        width: 500px;
+        left: 55%;
+     }
+}
+
+@media screen and (width > 1111px) and (width < 1113px) {
+    .descriptionCard{
+        top: 20%;
+        left: 60%;
+    }
+
+    #order_form {
+        width: 500px;
+        left: 55%;
+     }
+}
+
+@media screen and (width > 1365px) and (width < 1367px) {
+    .descriptionCard{
+        top: 20%;
+        left: 45%;
+    }
+
+    #order_form {
+        width: 500px;
+        left: 55%;
+     }
+}
+
+@media screen and (width > 1193px) and (width < 1195px) {
+    .descriptionCard{
+        top: 20%;
+        left: 45%;
+    }
+
+    #order_form {
+        width: 500px;
+        left: 55%;
+     }
 }
