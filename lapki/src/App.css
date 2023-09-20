@@ -75,6 +75,10 @@
   margin-right:auto;
 }
 
+#back_button {
+  padding: 10px;
+}
+
 #content-jewelry-list {
   padding-left: 15%;
 }

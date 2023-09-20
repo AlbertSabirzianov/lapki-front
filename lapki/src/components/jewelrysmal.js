@@ -1,9 +1,12 @@
-function JewelryList({ d, clickOne }) {
+import { Link } from "react-router-dom";
+
+function JewelryList({ d }) {
     return (
         <div className='content-jewelry' id='content-jewelry-list'>
             {
-                d.map(jewelry => 
-                <div className='card' key={jewelry.pk} onClick={() => clickOne(jewelry.pk)} >
+                d.map(jewelry =>
+                <Link key={jewelry.pk} to={'/jewelry/' + jewelry.pk}>
+                <div className='card'>
                 <img className="card-img-top" alt="somthind wrong" src={jewelry.icon}/>
                 <div className="card-body">
                     <h3 className="card-title"><b>{jewelry.name}</b></h3>
@@ -11,6 +14,7 @@ function JewelryList({ d, clickOne }) {
                     
                 </div>
                 </div>
+                </Link>
                     )
             }
         </div>

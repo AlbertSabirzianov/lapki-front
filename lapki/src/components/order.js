@@ -38,7 +38,7 @@ export default function Order({ bascetJewelrys, stateBascetJewelrys, stateSumm, 
             swal("Внимание!", "Корзина пуста(", "warning");
         } else {
             stateLoading(loading => true);
-      axios.post(orderUrl, { // добавить в модель order поле summ
+        axios.post(orderUrl, {
         "summ": summ,
         "name": data.name,
         "description": data.comment,

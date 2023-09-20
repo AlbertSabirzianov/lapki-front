@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import OneJewelry from './components/jewelryone';
 import { baseUrl } from './components/utils';
 import Basket from './components/basket';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 const jewelryUrl = baseUrl + 'jewelry';
 
@@ -18,20 +19,11 @@ function App() {
   const [bascetJewelrys, stateBascetJewelrys] = useState([]);
   const [idList, stateIdList] = useState([]);
 
-  const [isOne, stateIsOne] = useState(false);
   const [d, setData] = useState([]); 
-  const [id, setId] = useState(0); // id отдельного украшения
   const [searchText, setSearchText] = useState('');
   const filterData = d.filter(jewelry => {
     return jewelry.name.toLowerCase().includes(searchText.toLowerCase()) || jewelry.description.toLowerCase().includes(searchText.toLowerCase())
   })
-  const [isIn, stateIsIn] = useState(false);
-
- 
-  useEffect(() => {
-    stateIsIn(isOne => idList.includes(id));
-
-  }, [id, idList, summ])
 
   useEffect(() => {
       axios.get(jewelryUrl).then(response => 
@@ -43,46 +35,42 @@ function App() {
     axios.get(jewelryUrl + '?category=' + category).then(response => 
       setData(d => response.data)
         );
-    stateIsOne(isOne => false);
+  
   }
 
   function stopFilter() { // Отменяет фильтрацию по категориям
     axios.get(jewelryUrl).then(response => 
       setData(d => response.data)
         );
-    stateIsOne(isOne => false);
-  }
-  
-  function clickOne(number) { // Откравает одно украшение
-    setId(id => number);
-    stateIsOne(b => true);
-  }
-
-  function clickMany() { // Переключает на все украшения
-    stateIsOne(b => false);
   }
 
   return (
     <>
-    <NavBar setSearchText={setSearchText}  changeFilter={changeFilter} clickMany={clickMany} stopFilter={stopFilter}/>
-    { isOne ? <OneJewelry 
-    id={id}
-     bascetJewelrys={bascetJewelrys}
-     stateBascetJewelrys={stateBascetJewelrys}
-        summ={summ}
-        stateSumm={stateSumm}
-        isIn={isIn}
-        stateIdList={stateIdList}
-        idList={idList}
-        /> : <JewelryList d={filterData} clickOne={clickOne}/> }
-    <Basket 
-     bascetJewelrys={bascetJewelrys}
-     stateBascetJewelrys={stateBascetJewelrys}
-     summ={summ}
-     stateSumm={stateSumm}
-     stateIdList={stateIdList}
-     idList={idList}
-     ></Basket>
+    
+    <Router>
+    <NavBar setSearchText={setSearchText}  changeFilter={changeFilter} stopFilter={stopFilter}/>
+      <Routes>
+        <Route exact path='/' element={<JewelryList d={filterData}/>}/>
+        <Route path='/jewelry/:id' element={
+             <OneJewelry 
+                stateBascetJewelrys={stateBascetJewelrys}
+                summ={summ}
+                stateSumm={stateSumm}
+                stateIdList={stateIdList}
+                idList={idList}
+              />} 
+        />
+      </Routes>
+        <Basket 
+            bascetJewelrys={bascetJewelrys}
+            stateBascetJewelrys={stateBascetJewelrys}
+            summ={summ}
+            stateSumm={stateSumm}
+            stateIdList={stateIdList}
+            idList={idList} 
+        />
+      </Router>
+    
    </>
   );
 }
