@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 
+function getUrlName(name) {
+    return '/' + name.split(' ').join('_')
+}
+
 function JewelryList({ d }) {
     return (
         <div className='content-jewelry' id='content-jewelry-list'>
             {
                 d.map(jewelry =>
-                <Link key={jewelry.pk} to={'/jewelry/' + jewelry.pk}>
+                <Link key={jewelry.pk} to={'/jewelry/' + jewelry.pk + getUrlName(jewelry.name)}>
                 <div className='card'>
                 <img className="card-img-top" alt="somthind wrong" src={jewelry.icon}/>
                 <div className="card-body">
@@ -19,7 +23,6 @@ function JewelryList({ d }) {
             }
         </div>
     )
-
 }
 
 export default JewelryList;

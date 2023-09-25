@@ -51,7 +51,7 @@ function App() {
     <NavBar setSearchText={setSearchText}  changeFilter={changeFilter} stopFilter={stopFilter}/>
       <Routes>
         <Route exact path='/' element={<JewelryList d={filterData}/>}/>
-        <Route path='/jewelry/:id' element={
+        <Route path='/jewelry/:id/:name' element={
              <OneJewelry 
                 stateBascetJewelrys={stateBascetJewelrys}
                 summ={summ}
